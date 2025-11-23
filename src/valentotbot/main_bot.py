@@ -18,7 +18,8 @@ def build_webhook_url(settings: Settings) -> str:
     """Construct full webhook URL from base and path."""
     path = settings.webhook_path
     normalized_path = path if path.startswith("/") else f"/{path}"
-    return f"{settings.webhook_base_url.rstrip('/')}{normalized_path}"
+    base = str(settings.webhook_base_url)
+    return f"{base.rstrip('/')}{normalized_path}"
 
 
 async def init_db(settings: Settings) -> None:

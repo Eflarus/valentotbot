@@ -50,6 +50,9 @@ class LinkRepository(Protocol):
     async def exists_slug(self, slug: str) -> bool:
         ...
 
+    async def set_active(self, link_id: int, is_active: bool) -> None:
+        ...
+
 
 class MessageRepository(Protocol):
     async def create(

@@ -27,6 +27,8 @@ def upgrade() -> None:
         "REPLY",
         "REVEAL_AUTHOR",
         "PAGINATE",
+        "LINK_TOGGLE",
+        "LINK_CREATE",
         name="callback_token_type",
     )
 

@@ -16,7 +16,7 @@ SRC_DIR = BASE_DIR / "src"
 if str(SRC_DIR) not in sys.path:
     sys.path.append(str(SRC_DIR))
 
-from valentotbot.config import get_settings
+from valentotbot.config import get_settings  # noqa: E402
 from valentotbot.infrastructure.db import Base, build_connection_string  # noqa: E402
 
 config = context.config

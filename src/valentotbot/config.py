@@ -4,7 +4,7 @@ from enum import Enum
 from functools import lru_cache
 from typing import Literal
 
-from pydantic import Field, HttpUrl
+from pydantic import AnyUrl, Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     bot_username: str = Field(..., alias="BOT_USERNAME")
 
     # Webhook
-    webhook_base_url: HttpUrl = Field(..., alias="WEBHOOK_BASE_URL")
+    webhook_base_url: AnyUrl = Field(..., alias="WEBHOOK_BASE_URL")
     webhook_path: str = Field("/bot/webhook", alias="WEBHOOK_PATH")
 
     # Application

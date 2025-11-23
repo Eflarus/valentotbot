@@ -6,14 +6,15 @@ build-backend = "setuptools.build_meta"
 name = "valentotbot"
 version = "0.1.0"
 description = "Anonymous valentines Telegram bot with multi-links"
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 authors = [{ name = "eflarus" }]
 readme = "README.MD"
 dependencies = [
-    "python-telegram-bot==22.5",
+    "python-telegram-bot[webhooks]==22.5",
     "fastapi>=0.110,<0.113",
     "uvicorn[standard]>=0.29,<0.31",
     "SQLAlchemy>=2.0,<2.1",
+    "greenlet>=3.0,<3.1",
     "alembic>=1.13,<1.14",
     "asyncpg>=0.29,<0.30",
     "redis>=5.0,<5.1",
@@ -33,7 +34,7 @@ dev = [
 
 [tool.black]
 line-length = 142
-target-version = ["py311"]
+target-version = ["py312"]
 include = "\\.pyi?$"
 extend-exclude = """
 /(
@@ -46,7 +47,7 @@ extend-exclude = """
 """
 
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 line-length = 142
 respect-gitignore = true
 fix = false
@@ -75,7 +76,7 @@ indent-style = "space"
 skip-magic-trailing-comma = false
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.12"
 strict = true
 warn_return_any = true
 warn_unused_configs = true

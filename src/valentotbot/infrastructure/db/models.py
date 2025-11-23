@@ -35,6 +35,8 @@ class CallbackTokenType(str, Enum):
     REPLY = "REPLY"
     REVEAL_AUTHOR = "REVEAL_AUTHOR"
     PAGINATE = "PAGINATE"
+    LINK_TOGGLE = "LINK_TOGGLE"
+    LINK_CREATE = "LINK_CREATE"
 
 
 class User(Base):

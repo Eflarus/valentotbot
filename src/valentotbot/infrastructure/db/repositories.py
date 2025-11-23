@@ -199,6 +199,11 @@ class SqlAlchemyLinkRepository(LinkRepository):
         count = result.scalar_one()
         return count > 0
 
+    async def set_active(self, link_id: int, is_active: bool) -> None:
+        stmt = update(Link).where(Link.id == link_id).values(is_active=is_active)
+        await self._session.execute(stmt)
+        await self._session.commit()
+
 
 class SqlAlchemyMessageRepository(MessageRepository):
     def __init__(self, session: AsyncSession) -> None:
